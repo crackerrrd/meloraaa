@@ -33,3 +33,22 @@
 .product-detail-bottom{margin-top:auto;padding-top:25px}
 .product-detail-bottom>strong{display:block;font-family:var(--serif);font-size:26px;font-weight:400;margin-bottom:14px}
 @media(max-width:620px){.product-detail-layout{grid-template-columns:1fr;gap:18px}.product-detail-image{aspect-ratio:5/4;max-height:300px}.product-detail-bottom{padding-top:18px}.product-modal{max-height:88dvh}.product-detail-description{margin-bottom:18px}}
+
+/* интерфейсные значки рисуются SVG, поэтому не зависят от набора символов фирменных шрифтов */
+.ui-icon{display:block;width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
+.icon-slot{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto}
+.icon-slot .ui-icon,.inline-arrow{width:16px;height:16px}
+.menu-toggle .ui-icon{width:23px;height:23px;stroke-width:1.6}
+.search-icon{display:inline-flex;align-items:center;justify-content:center;flex:0 0 22px}
+.search-icon .ui-icon{width:19px;height:19px;stroke-width:1.5}
+.sound-mark{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;flex:0 0 20px}
+.sound-mark .ui-icon{width:18px;height:18px;stroke-width:1.2}
+.contact-symbol{display:flex;align-items:center;justify-content:center;width:28px;height:28px}
+.contact-symbol .ui-icon{width:26px;height:26px;stroke-width:1.3}
+.icon-button{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;flex:0 0 34px}
+.icon-button .ui-icon{width:22px;height:22px;stroke-width:1.5}
+.remove-item{display:grid;place-items:center}
+.remove-item .ui-icon{width:15px;height:15px;stroke-width:1.5}
+.footer-arrow{display:inline-block;vertical-align:middle;width:13px;height:13px;margin-left:2px}
+.button .ui-icon{width:16px;height:16px}
+@media(max-width:620px){.menu-toggle{width:38px;height:38px;display:flex;align-items:center;justify-content:center;padding:0}.search-icon{flex-basis:20px}}

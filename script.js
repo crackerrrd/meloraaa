@@ -5,6 +5,11 @@ const products = [
   {id:4,name:'между строк',subtitle:'браслет · серебро 925',price:6900,category:'bracelet',shape:'chain',image:'product-bracelet.jpg',tag:'',featured:4,description:'браслет о смыслах, которые не всегда можно выразить словами. серебряные звенья соединяют отдельные мгновения в одну историю.'}
 ];
 const rubles = n => new Intl.NumberFormat('ru-RU').format(n) + ' ₽';
+const iconArrow = '<svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>';
+const iconClose = '<svg class="ui-icon close-glyph" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>';
+const iconMenu = '<svg class="ui-icon menu-glyph" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>';
+const iconCheck = '<svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg>';
+
 let activeCategory = 'all';
 let cart = [];
 let activeProduct = null;
@@ -34,7 +39,7 @@ function updateCart(){
   document.querySelector('#cartCount').textContent=count;
   document.querySelector('#drawerCount').textContent=`(${count})`;
   document.querySelector('#cartTotal').textContent=rubles(total);
-  document.querySelector('#cartItems').innerHTML=cart.length?cart.map(i=>`<div class="cart-item"><div class="mini-art">${productArt(i)}</div><div><p class="cart-item-name">${i.name}</p><span class="cart-item-price">${rubles(i.price)}</span><div class="qty-controls"><button data-qty="${i.id}" data-delta="-1" aria-label="уменьшить количество">−</button><span>${i.qty}</span><button data-qty="${i.id}" data-delta="1" aria-label="увеличить количество">+</button></div></div><button class="remove-item" data-remove="${i.id}" aria-label="удалить ${i.name}">×</button></div>`).join(''):'<p class="empty-cart">пока здесь пусто — добавьте украшение, которое вам откликнулось.</p>';
+  document.querySelector('#cartItems').innerHTML=cart.length?cart.map(i=>`<div class="cart-item"><div class="mini-art">${productArt(i)}</div><div><p class="cart-item-name">${i.name}</p><span class="cart-item-price">${rubles(i.price)}</span><div class="qty-controls"><button data-qty="${i.id}" data-delta="-1" aria-label="уменьшить количество">-</button><span>${i.qty}</span><button data-qty="${i.id}" data-delta="1" aria-label="увеличить количество">+</button></div></div><button class="remove-item" data-remove="${i.id}" aria-label="удалить ${i.name}">${iconClose}</button></div>`).join(''):'<p class="empty-cart">пока здесь пусто — добавьте украшение, которое вам откликнулось.</p>';
   document.querySelector('#checkoutOpen').disabled=!cart.length;
   document.querySelector('#checkoutOpen').style.opacity=cart.length?'1':'.45';
 }
@@ -98,7 +103,7 @@ document.querySelector('#checkoutForm').addEventListener('submit',e=>{
   const data=new FormData(e.currentTarget);
   const clean=value=>String(value||'').replace(/[<>]/g,'').trim();
   const deliveryLabel=data.get('delivery')==='courier'?'СДЭК — курьером':'СДЭК — в пункт выдачи';
-  const items=cart.map(i=>`• ${i.name} × ${i.qty} — ${rubles(i.price*i.qty)}`).join('\n');
+  const items=cart.map(i=>`- ${i.name} x ${i.qty} — ${rubles(i.price*i.qty)}`).join('\n');
   const total=cart.reduce((s,i)=>s+i.qty*i.price,0);
   const comment=clean(data.get('comment'));
   const message=[
@@ -112,18 +117,20 @@ document.querySelector('#checkoutForm').addEventListener('submit',e=>{
   success.replaceChildren();
   const title=document.createElement('strong');title.textContent='заказ готов к отправке';
   const note=document.createElement('p');note.textContent='Telegram откроется с подготовленным сообщением. Проверьте детали и нажмите «отправить», чтобы передать заказ менеджеру.';
-  const link=document.createElement('a');link.className='button button-dark full-width telegram-submit';link.href=tgUrl;link.target='_blank';link.rel='noopener noreferrer';link.textContent='открыть Telegram ↗';
+  const link=document.createElement('a');link.className='button button-dark full-width telegram-submit';link.href=tgUrl;link.target='_blank';link.rel='noopener noreferrer';link.textContent='открыть Telegram';link.insertAdjacentHTML('beforeend', iconArrow);
   success.append(title,note,link);success.hidden=false;e.currentTarget.hidden=true;
 });
 document.querySelector('#menuToggle').addEventListener('click',()=>{
   const nav=document.querySelector('#mainNav');const open=nav.classList.toggle('open');
   document.querySelector('#menuToggle').setAttribute('aria-expanded',String(open));
-  document.querySelector('#menuToggle').textContent=open?'×':'☰';
+  document.querySelector('#menuToggle').setAttribute('aria-label',open?'закрыть меню':'открыть меню');
+  document.querySelector('#menuToggle').innerHTML=open?iconClose:iconMenu;
 });
 document.querySelectorAll('#mainNav a').forEach(a=>a.addEventListener('click',()=>{
   document.querySelector('#mainNav').classList.remove('open');
   document.querySelector('#menuToggle').setAttribute('aria-expanded','false');
-  document.querySelector('#menuToggle').textContent='☰';
+  document.querySelector('#menuToggle').setAttribute('aria-label','открыть меню');
+  document.querySelector('#menuToggle').innerHTML=iconMenu;
 }));
 document.addEventListener('keydown',e=>{if(e.key==='Escape')hideOverlay();});
 renderProducts();updateCart();
