@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="мелора — украшения, вдохновлённые музыкой и личными историями.">
+  <meta name="theme-color" content="#000000">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="мелора — украшения, в которых остаётся музыка">
+  <meta property="og:description" content="серебряные украшения, вдохновлённые музыкой и личными историями.">
+  <meta property="og:image" content="assets/collection-mockup.jpg">
+  <link rel="preconnect" href="https://media.uprock.school" crossorigin>
+  <title>мелора — украшения, в которых остаётся музыка</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="announcement">серебро · музыка · личные истории</div>
+  <header class="site-header">
+    <a class="brand-lockup" href="#top" aria-label="мелора — на главную">
+      <img class="header-logo" src="assets/melora-logo-on-white.png" alt="">
+      <span class="wordmark">мелора</span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="открыть меню" aria-expanded="false">☰</button>
+    <nav class="main-nav" id="mainNav" aria-label="основная навигация">
+      <a href="#catalog">украшения</a><a href="#concept">концепция</a><a href="#about">о бренде</a><a href="#details">информация</a><a href="#contacts">контакты</a>
+    </nav>
+    <button class="cart-trigger" id="cartOpen" aria-label="открыть корзину">корзина <span id="cartCount">0</span></button>
+  </header>
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">украшения, вдохновлённые музыкой</p>
+        <h1>оставь себе<br>то, что <em>звучит</em></h1>
+        <p class="hero-description">есть песни, которые остаются с нами дольше, чем звучат. мелора превращает эти чувства в серебряные формы, которые можно носить близко к себе.</p>
+        <a class="button button-light" href="#catalog">смотреть украшения <span>↗</span></a>
+        <div class="hero-note"><span class="sound-mark">✳</span><span>твоя история. твой звук. твоя мелора.</span></div>
+      </div>
+      <div class="hero-art" role="img" aria-label="серебряные украшения и чёрная упаковка мелора">
+        <img class="hero-image" src="assets/collection-mockup.jpg" alt="серебряные украшения в чёрной упаковке мелора">
+        <div class="hero-art-caption">серебро · форма · ритм</div>
+        <span class="hero-index">m / 01</span>
+      </div>
+    </section>
+
+    <section class="intro section" id="concept">
+      <p class="eyebrow">идея мелоры / 01</p>
+      <div class="intro-grid">
+        <h2>музыка проходит.<br><em>чувство остаётся.</em></h2>
+        <div><p class="large-copy">одна песня может вернуть в конкретный вечер, к человеку или к себе прежнему. мы верим, что украшение может стать маленьким знаком этой связи.</p><p class="muted">не просто деталь образа — личная история, которую не нужно объяснять всем.</p></div>
+      </div>
+    </section>
+
+    <section class="catalog-section section" id="catalog">
+      <div class="section-heading"><div><p class="eyebrow">найди своё звучание / 02</p><h2>избранные украшения</h2></div><span class="catalog-count" id="resultCount">4 изделия</span></div>
+      <div class="catalog-tools">
+        <div class="filter-tabs" role="group" aria-label="фильтр по категории"><button class="filter-tab active" data-category="all">все</button><button class="filter-tab" data-category="pendant">подвески</button><button class="filter-tab" data-category="ring">кольца</button><button class="filter-tab" data-category="earrings">серьги</button><button class="filter-tab" data-category="bracelet">браслеты</button></div>
+        <label class="search-box"><span aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="найти украшение" aria-label="найти украшение"></label>
+        <select id="sortSelect" aria-label="сортировка"><option value="featured">сначала избранное</option><option value="low">сначала дешевле</option><option value="high">сначала дороже</option></select>
+      </div>
+      <div class="product-grid" id="productGrid" aria-live="polite"></div>
+    </section>
+
+    <section class="story-band">
+      <div class="story-art" aria-label="хромированная монограмма мелора на чёрном фоне" role="img">
+        <img class="story-logo" src="assets/melora-logo-on-black.png" alt="">
+        <span class="story-art-caption">мелора · знак звучания</span>
+      </div>
+      <div class="story-copy"><p class="eyebrow">коллекция / личные истории</p><h2>некоторые песни<br>становятся <em>частью нас</em></h2><p>первый танец, дорога домой, голос в наушниках. у каждой истории свой ритм — и своё место рядом с сердцем.</p><a class="text-link" href="#about">познакомиться с мелорой <span>↗</span></a></div>
+    </section>
+
+    <section class="values section"><p class="eyebrow">принципы мелоры / 03</p><div class="value-grid"><article><span class="value-number">01</span><h3>смысл</h3><p>музыка и моменты, которые хочется сохранить не только в памяти.</p></article><article><span class="value-number">02</span><h3>материал</h3><p>основа коллекции — серебро 925 пробы с родированием.</p></article><article><span class="value-number">03</span><h3>деталь</h3><p>форма, фактура и упаковка работают вместе — от первого взгляда до момента, когда украшение становится личным.</p></article></div></section>
+
+    <section class="about-section section" id="about"><div class="about-mark"><img src="assets/melora-logo-on-black.png" alt="монограмма мелора"></div><div><p class="eyebrow">немного о нас / 04</p><h2>мелора — это<br><em>чувства в форме</em></h2><p>мелора исследует связь музыки и памяти через украшения. это эстетика контраста: чёрное и белое, точная форма и живое чувство, холодный блеск металла и тёплая история за ним.</p><a class="text-link" href="#details">как выбрать и ухаживать <span>↗</span></a></div></section>
+
+    <section class="info-section section" id="details"><div class="section-heading"><div><p class="eyebrow">перед заказом / 05</p><h2>всё важное</h2></div></div><div class="info-list"><details><summary>из чего сделаны украшения? <span>+</span></summary><p>основа коллекции — серебро 925 пробы с родированием. материал и особенности конкретного изделия указаны в его карточке.</p></details><details><summary>как ухаживать за украшением? <span>+</span></summary><p>храните украшение отдельно в сухом месте, берегите от ударов и царапин, снимайте перед использованием бытовой химии и косметических средств. для сохранения блеска периодически протирайте изделие мягкой салфеткой.</p></details><details><summary>как оформить заказ? <span>+</span></summary><p>добавьте украшение в корзину, заполните контактные данные и перейдите в Telegram. проверьте подготовленное сообщение и отправьте его менеджеру — мы подтвердим детали заказа.</p></details><details><summary>доставка, оплата и возврат <span>+</span></summary><p>отправляем заказы через СДЭК. при оформлении можно выбрать пункт выдачи или курьерскую доставку. менеджер подтвердит сроки, стоимость доставки и доступный способ оплаты. условия обмена и возврата предоставляются при подтверждении заказа.</p></details></div></section>
+
+    <section class="contacts-section section" id="contacts" aria-labelledby="contactsTitle">
+      <div class="section-heading contacts-heading">
+        <div><p class="eyebrow">связь с мелорой / 06</p><h2 id="contactsTitle">мы на связи</h2></div>
+        <p class="contacts-lead">вопрос по украшению, заказу или сотрудничеству? напиши нам удобным способом.</p>
+      </div>
+      <div class="contacts-grid">
+        <article class="contact-card">
+          <span class="contact-card-index">01 / локация</span>
+          <span class="contact-symbol" aria-hidden="true">⌖</span>
+          <h3>казань, россия</h3>
+          <p>онлайн-бренд из казани</p>
+        </article>
+        <article class="contact-card">
+          <span class="contact-card-index">02 / telegram</span>
+          <span class="contact-symbol" aria-hidden="true">↗</span>
+          <h3>напиши нам</h3>
+          <p><a href="https://t.me/gosmuv" target="_blank" rel="noopener noreferrer" aria-label="Открыть Telegram-профиль @gosmuv">@gosmuv <span aria-hidden="true">↗</span></a></p>
+        </article>
+        <article class="contact-card">
+          <span class="contact-card-index">03 / телефон</span>
+          <span class="contact-symbol" aria-hidden="true">✳</span>
+          <h3>позвони нам</h3>
+          <p><a href="tel:+79871849141">+7 (987) 184-91-41</a></p>
+        </article>
+      </div>
+      <p class="contacts-note">по вопросам заказа, размера и доставки — напиши нам в telegram.</p>
+    </section>
+
+    <section class="contact-cta"><p class="eyebrow">оставь себе свою историю</p><h2>найди украшение,<br>которое <em>отзовётся</em></h2><a class="button button-light" href="#catalog">выбрать украшение <span>↗</span></a></section>
+  </main>
+  <footer class="site-footer"><a class="brand-lockup footer-brand" href="#top"><img class="footer-logo" src="assets/melora-logo-on-black.png" alt=""><span class="wordmark">мелора</span></a><p>украшения, вдохновлённые музыкой</p><div class="footer-links"><a href="#concept">концепция</a><a href="#catalog">каталог</a><a href="#details">информация</a><a href="#contacts">контакты</a><a href="https://t.me/gosmuv" target="_blank" rel="noopener noreferrer">telegram ↗</a></div><small>© мелора, 2026 · украшения, вдохновлённые музыкой</small></footer>
+
+  <div class="overlay" id="overlay" hidden></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="корзина" aria-hidden="true"><div class="drawer-heading"><div><p class="eyebrow">ваш выбор</p><h2>корзина <span id="drawerCount">(0)</span></h2></div><button class="icon-button" id="cartClose" aria-label="закрыть корзину">×</button></div><div id="cartItems" class="cart-items"></div><div class="cart-bottom"><div class="total-row"><span>итого</span><strong id="cartTotal">0 ₽</strong></div><button class="button button-dark full-width" id="checkoutOpen">перейти к заявке <span>↗</span></button><p class="tiny-note">доставку и способ оплаты подтвердим при оформлении заказа.</p></div></aside>
+  <div class="modal product-modal" id="productModal" role="dialog" aria-modal="true" aria-labelledby="productModalTitle" hidden><div class="modal-heading"><div><p class="eyebrow">подробности изделия</p><h2 id="productModalTitle">название украшения</h2></div><button class="icon-button" id="productModalClose" aria-label="закрыть карточку">×</button></div><div class="product-detail-layout"><div class="product-detail-image"><img id="productModalImage" src="assets/product-pendant.jpg" alt=""></div><div class="product-detail-copy"><p id="productModalSubtitle" class="product-detail-subtitle"></p><p id="productModalDescription" class="product-detail-description"></p><div class="product-detail-material"><span>материал</span><strong>серебро 925 · родирование</strong></div><div class="product-detail-bottom"><strong id="productModalPrice"></strong><button class="button button-dark full-width" id="productModalAdd">добавить в корзину <span>+</span></button></div></div></div></div>
+  <div class="modal" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle" hidden><div class="modal-heading"><div><p class="eyebrow">последний шаг</p><h2 id="checkoutTitle">оформление заказа</h2></div><button class="icon-button" id="checkoutClose" aria-label="закрыть форму">×</button></div><form id="checkoutForm"><label>как к вам обращаться<input name="name" required autocomplete="name" placeholder="ваше имя"></label><label>телефон или e-mail<input name="contact" required autocomplete="email" placeholder="для связи с вами"></label><label>способ доставки<select name="delivery"><option value="pickup">СДЭК — в пункт выдачи</option><option value="courier">СДЭК — курьером</option></select></label><label>комментарий <textarea name="comment" rows="3" placeholder="город, пожелания или вопрос"></textarea></label><p class="form-help">после продолжения откроется Telegram с подготовленным сообщением о заказе.</p><button class="button button-dark full-width" type="submit">продолжить в Telegram <span>↗</span></button></form><div id="formSuccess" class="form-success" hidden></div></div>
+  <script src="script.js"></script>
+</body>
+</html>
